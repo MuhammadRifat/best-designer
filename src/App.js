@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Home from './components/Home/Home';
+import Dropdown from './components/Navbar/Dropdown/Dropdown';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar toggle={toggle}></Navbar>
+      <Dropdown isOpen={isOpen} toggle={toggle}></Dropdown>
+      <Home></Home>
     </div>
   );
 }
