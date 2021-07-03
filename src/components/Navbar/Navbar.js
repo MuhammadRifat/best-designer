@@ -1,9 +1,11 @@
 import React from 'react';
+import logo from '../../images/logo_white.png';
 
+// Navigation bar of this website
 const Navbar = ({toggle}) => {
     return (
         <nav className="flex justify-between items-center h-16 bg-red-500 text-white relative shadow-md font-mono lg:px-28 px-4" role="navigation">
-            <h1 className="font-bold text-3xl">Happy Fly</h1>
+            <img className="w-48" src={logo} alt="" />
             
             <div className="pr-8 md:block hidden text-xl">
                 <a href="#" className="p-4">Home</a>
